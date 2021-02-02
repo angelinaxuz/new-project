@@ -1,0 +1,39 @@
+.header {
+  height: 100px;
+  padding-top: 20px;
+  position: relative;
+  z-index: 1;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+}
+
+
+.logo {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 600;
+  color: $text;
+}
+
+.nav__inner {
+  a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    color: $text;
+    margin-right: 50px;
+  }
+}
+
+.phone {
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 600;
+  color: $text;
+}
