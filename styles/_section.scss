@@ -9,6 +9,8 @@
 }
 
 .item {
+  display: flex;
+  justify-content: space-between;
   width: 50%;
   padding-right: 134px;
   padding-left: 30px;

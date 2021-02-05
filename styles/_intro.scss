@@ -29,14 +29,16 @@
   }
 }
 
-.item {
+.intro__block {
   display: flex;
   justify-content: space-between;
 
-  &__img {
+
+}
+
+.intro__img {
     margin-right: 15px;
   }
-}
 
 .fon {
   background-color: $primary;

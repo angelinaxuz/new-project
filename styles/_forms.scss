@@ -1,5 +1,6 @@
 .forms {
   padding-top: 100px;
+  margin-right: 265px;
 
   &__title {
     color: $text;
@@ -27,19 +28,25 @@
   &__info {
     display: flex;
     justify-content: space-between;
+    margin-left: 65px;
+    margin-top: 10px;
   }
 
   &__name {
     width: 50%;
-    margin-right: 45px;
+    margin-right: 50px;
   }
 
   &__input {
-    width: 100%;
-    padding: 0;
     border: none;
     border-bottom: 1px solid #e0e0e0;
-    background-color: transparent;
+    width: 250px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    padding-top: 10px;
+    outline: none;
+
+
 
   }
 

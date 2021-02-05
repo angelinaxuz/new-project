@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
 </head>
 <body>
 <header class="header">
@@ -35,21 +38,21 @@
             <span>По Москве и области</span>
             <div class="button">Заказать</div>
             <div class="intro__items">
-                <div class="item">
-                    <img class="item__img" src="img/intro/1.png" alt="">
-                    <div class="item__text">Более 800
+                <div class="intro__block">
+                    <img class="intro__img" src="img/intro/1.png" alt="">
+                    <div class="intro__block_text">Более 800
                         переездов
                     </div>
                 </div>
-                <div class="item">
-                    <img class="item__img" src="img/intro/2.png" alt="">
-                    <div class="item__text">Бережная
+                <div class="intro__block">
+                    <img class="intro__img" src="img/intro/2.png" alt="">
+                    <div class="intro__block_text">Бережная
                         упаковка
                     </div>
                 </div>
-                <div class="item">
-                    <img class="item__img" src="img/intro/3.png" alt="">
-                    <div class="item__text">Фиксированная
+                <div class="intro__block">
+                    <img class="intro__img" src="img/intro/3.png" alt="">
+                    <div class="intro__block_text">Фиксированная
                         цена
                     </div>
                 </div>
@@ -234,22 +237,75 @@
         <div class="forms__block">
             <div class="forms__info">
                 <div class="forms__name">
-                    <label class="forms__label">Ваше имя</label>
-                    <input class="forms__input" type="text">
+                    <label class="forms__label"></label>
+                    <input class="forms__input" type="text" placeholder="Ваше имя">
                 </div>
                 <div class="forms__name">
-                    <label class="forms__label">Телефон</label>
-                    <input class="forms__input" type="text">
+                    <label class="forms__label"></label>
+                    <input class="forms__input" type="text" placeholder="Телефон">
                 </div>
             </div>
             <div class="forms__button">
                 <div class="button button__text">Перезвонить мне</div>
                 <div class="forms__consent">
-                    <input type="checkbox" id=”politics” >
-                    Даю согласие на обработку данных</div>
+                    <input type="checkbox" id=”politics”>
+                    Даю согласие на обработку данных
+                </div>
             </div>
         </div>
     </div>
 </div>
+<div class="maps">
+    <div class="maps__fon"></div>
+    <div class="container">
+        <div class="maps__block">
+            <div class="maps__title">MOVEE</div>
+            <ul>
+                <li class="maps__list">Москва, Волгоградский пр-т, 38</li>
+                <li class="maps__list">8 (800)-080-12-13</li>
+                <li class="maps__list maps__list-text">hello@movee.ru</li>
+            </ul>
+            <div class="maps__social">
+                <a href="#" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer__fon"></div>
+    <div class="container">
+        <div class="footer__inner">
+            <div class="footer__items">
+                <div class="footer__copyright_title">MOVEE</div>
+                <div class="footer__copyright_text">Политика
+                    конфиденциальнности
+                </div>
+                <div class="footer__copyright_text">Соглашение на обработку персональных данных</div>
+            </div>
+            <div class="footer__items">
+                <a class="footer__link" href="#">Главная</a>
+                <a class="footer__link" href="#">Цены</a>
+                <a class="footer__link" href="#">Автопарк</a>
+                <a class="footer__link" href="#">Отзывы</a>
+                <a class="footer__link" href="#">Контакты</a>
+            </div>
+            <div class="footer__items">
+                <div class="footer__social">
+                    <a href="#" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+                </div>
+                <div class="footer__mail">hello@movee.ru</div>
+            </div>
+            <div class="footer__items">
+                <div class="button button--reviews button--footer">Обратный звонок</div>
+                <div class="footer__number">8 (800)-080-12-13
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

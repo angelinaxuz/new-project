@@ -38,7 +38,8 @@ body {
   font-size: 24px;
   line-height: 29px;
   font-weight: 600;
-  color: #333333; }
+  color: #333333;
+  padding-right: 45px; }
 
 .button {
   width: 300px;
@@ -110,6 +111,12 @@ body {
     left: 10px;
     top: 10px; }
 
+.button--footer {
+  width: 250px;
+  height: 45px;
+  margin: 0 10px 20px 35px;
+  line-height: 15px; }
+
 .intro {
   position: relative;
   margin-top: -100px; }
@@ -131,11 +138,12 @@ body {
     display: flex;
     justify-content: space-between; }
 
-.item {
+.intro__block {
   display: flex;
   justify-content: space-between; }
-  .item__img {
-    margin-right: 15px; }
+
+.intro__img {
+  margin-right: 15px; }
 
 .fon {
   background-color: #FED100;
@@ -178,6 +186,8 @@ h3 {
     margin-bottom: 40px; }
 
 .item {
+  display: flex;
+  justify-content: space-between;
   width: 50%;
   padding-right: 134px;
   padding-left: 30px;
@@ -337,7 +347,8 @@ li:before {
     background-color: #FED100; }
 
 .forms {
-  padding-top: 100px; }
+  padding-top: 100px;
+  margin-right: 265px; }
   .forms__title {
     color: #333333;
     font-size: 30px;
@@ -357,16 +368,20 @@ li:before {
     justify-content: center; }
   .forms__info {
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    margin-left: 65px;
+    margin-top: 10px; }
   .forms__name {
     width: 50%;
-    margin-right: 45px; }
+    margin-right: 50px; }
   .forms__input {
-    width: 100%;
-    padding: 0;
     border: none;
     border-bottom: 1px solid #e0e0e0;
-    background-color: transparent; }
+    width: 250px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    padding-top: 10px;
+    outline: none; }
   .forms__label {
     color: #9e9e9e; }
   .forms__consent {
@@ -375,5 +390,109 @@ li:before {
     line-height: 14px;
     font-weight: 400;
     padding-top: 15px; }
+
+.maps {
+  position: relative;
+  margin-top: 80px; }
+  .maps__block {
+    width: 368px;
+    height: 326px;
+    position: relative;
+    background-color: #FFFFFF;
+    left: 150px;
+    top: 150px;
+    padding-left: 30px;
+    padding-top: 30px; }
+  .maps__title {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 40px; }
+  .maps__list {
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400; }
+  .maps__social {
+    font-size: 1.7em;
+    margin-top: 40px;
+    text-align: right; }
+    .maps__social a {
+      color: #000000;
+      margin-right: 20px; }
+  .maps__fon {
+    background-image: url("../img/maps/1.png");
+    height: 666px;
+    width: 100%;
+    position: absolute; }
+
+.maps__list:before {
+  content: " ";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-image: url("../img/maps/2.png");
+  background-repeat: no-repeat;
+  padding-right: 10px; }
+
+.maps__list-text {
+  text-decoration: underline; }
+
+.footer {
+  position: relative;
+  margin-top: 339px; }
+  .footer .footer__inner {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-top: 100px; }
+  .footer__fon {
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    background-color: #FED100; }
+  .footer__items {
+    display: flex;
+    flex-direction: column;
+    width: 25%; }
+  .footer__copyright_title {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 45px; }
+  .footer__copyright_text {
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400;
+    color: #333333;
+    margin-bottom: 35px;
+    padding-right: 56px; }
+  .footer__link {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #333333;
+    text-decoration: none;
+    margin-bottom: 10px;
+    padding-left: 35px; }
+  .footer__social {
+    font-size: 1.7em;
+    margin-bottom: 25px; }
+    .footer__social a {
+      color: #000000;
+      margin-right: 20px; }
+  .footer__mail {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #333333;
+    text-decoration: underline; }
+  .footer__number {
+    text-align: center;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400;
+    color: #333333; }
 
 /*# sourceMappingURL=main.css.map */
