@@ -1,6 +1,6 @@
 .maps {
-  position: relative;
-  margin-top: 80px;
+  background-image: url("../img/maps/1.png");
+  height: 660px;
 
   &__block {
     width: 368px;
@@ -22,12 +22,6 @@
     margin-bottom: 40px;
   }
 
-  &__list {
-    font-size: 16px;
-    line-height: 21px;
-    font-weight: 400;
-  }
-
   &__social {
     font-size: 1.7em;
     margin-top: 40px;
@@ -39,27 +33,6 @@
     }
   }
 
-  &__fon {
-    background-image: url("../img/maps/1.png");
-    height: 666px;
-    width: 100%;
-    position: absolute;
-  }
-}
-
-
-.maps__list:before {
-  content: " ";
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  background-image: url("../img/maps/2.png");
-  background-repeat: no-repeat;
-  padding-right: 10px;
-}
-
-.maps__list-text {
-  text-decoration: underline;
 }
 
 

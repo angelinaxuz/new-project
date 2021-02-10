@@ -1,0 +1,33 @@
+.listing {
+  margin-bottom: 30px;
+}
+
+
+.listing__info {
+  list-style-type: none;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 400;
+  padding-bottom: 20px;
+}
+
+.listing__info:before {
+  content: " ";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-image: url("../img/info/2.png");
+  background-repeat: no-repeat;
+  padding-right: 10px;
+}
+
+
+.listing__maps:before {
+  content: " ";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-image: url("../img/maps/2.png");
+  background-repeat: no-repeat;
+  padding-right: 10px;
+}

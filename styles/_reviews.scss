@@ -1,23 +1,19 @@
 .reviews {
-  position: relative;
-  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
 
-  &__items {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-  }
 
-  &__items_block {
-    width: 33.333%;
-    margin-right: 15px;
+
+  &__block {
+    width: 32%;
+
   }
 
   &__name {
     font-size: 24px;
-    line-height: 29px;
+    line-height: 1.21em;
     font-weight: 600;
-    color: $text;
     margin-bottom: 30px;
   }
 
@@ -30,9 +26,8 @@
 
   &__data {
     font-size: 16px;
-    line-height: 21px;
+    line-height: 1.31em;
     font-weight: 400;
-    color: $text;
     margin-right: 10px;
   }
 
@@ -42,25 +37,23 @@
 
   &__text {
     font-size: 16px;
-    line-height: 21px;
+    line-height: 1.31em;
     font-weight: 400;
-    color: $text;
     margin-bottom: 30px;
   }
 
   &__continued {
     font-size: 16px;
-    line-height: 21px;
+    line-height: 1.31em;
     font-weight: 400;
     color: $text;
-    text-decoration: underline;
+
   }
 
-  &__fon {
-    position: absolute;
-    width: 100%;
-    height: 660px;
-    background-color: $primary;
+  &__btn {
+    text-align: center;
   }
+
 }
+
 

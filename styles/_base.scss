@@ -6,8 +6,11 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  color: $text;
 }
 .container {
-  max-width: 1300px;
+  max-width: 1330px;
   margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
 }

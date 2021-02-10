@@ -1,0 +1,45 @@
+.process {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+
+  &__item {
+    display: flex;
+    width: 40%;
+    margin-bottom: 50px;
+  }
+
+
+  &__left {
+    font-size: 50px;
+    line-height: 1.22em;
+    font-weight: 300;
+    text-shadow: $primary 3px 0 0;
+    padding-right: 40px;
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.31em;
+    font-weight: 400;
+
+  }
+
+}
+
+
+
+
+
+
+
+
+

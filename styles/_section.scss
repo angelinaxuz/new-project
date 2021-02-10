@@ -1,42 +1,9 @@
 .section {
-  padding-top: 120px;
-
-  &__items {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-  }
+  padding-top: 20px;
 }
 
-.item {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-  padding-right: 134px;
-  padding-left: 30px;
-  margin-bottom: 50px;
-
-  &__left {
-    font-size: 50px;
-    line-height: 61px;
-    font-weight: 300;
-    color: $text;
-    text-shadow: $primary 3px 0 0;
-    padding-right: 40px;
-  }
-
-  &__title {
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 500;
-    color: $text;
-    margin-bottom: 10px;
-  }
-
-  &__text {
-    font-size: 16px;
-    line-height: 21px;
-    font-weight: 400;
-    color: $text;
-  }
+.section-yellow {
+  background-color: $primary;
+  margin-top: 100px;
+  padding-bottom: 80px;
 }

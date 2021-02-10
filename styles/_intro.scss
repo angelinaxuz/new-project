@@ -1,31 +1,36 @@
 .intro {
-  position: relative;
+  background-color: $primary;
   margin-top: -100px;
+  height: 650px;
+  padding-top: 100px;
+  position: relative;
+
+
 
   &__inner {
     max-width: 550px;
     position: relative;
-    padding-top: 100px;
+
+  }
+
+  &__title {
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 1.27em;
   }
 
   &__text {
-    font-size: 70px;
-    font-weight: 700;
-    line-height: 89px;
-    color: $text;
-
-  }
-
-  span {
     font-size: 30px;
     font-weight: 600;
-    line-height: 37px;
-    color: $text;
+    line-height: 1.23em;
+
+
   }
 
   &__items {
     display: flex;
     justify-content: space-between;
+    margin-top: 100px;
   }
 }
 
@@ -33,32 +38,23 @@
   display: flex;
   justify-content: space-between;
 
-
 }
 
 .intro__img {
-    margin-right: 15px;
-  }
-
-.fon {
-  background-color: $primary;
-  width: 100%;
-  height: 650px;
-  position: absolute;
-
-  &__outer {
-    position: absolute;
-    left: 850px;
-    top: 43px;
-  }
-
-  &__inner {
-    position: absolute;
-    left: 1150px;
-    top: 174px;
-  }
-
+  margin-right: 15px;
 }
+
+.intro:before {
+  content: " ";
+  background-image: url("../img/intro/123.png");
+  position: absolute;
+  width: 800px;
+  height: 600px;
+  left: 950px;
+  bottom: 0;
+}
+
+
 
 
 

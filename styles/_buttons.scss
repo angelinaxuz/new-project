@@ -1,95 +1,115 @@
-.button {
-  width: 300px;
-  height: 60px;
-  background-color: $red;
-  color: $btn;
-  font-size: 24px;
-  line-height: 29px;
-  font-weight: 600;
-  padding-top: 15px;
-  text-align: center;
-  position: relative;
-  margin-top: 60px;
-  margin-bottom: 70px;
-
-  &:after {
-    content: " ";
-    width: 300px;
-    height: 60px;
-    border: solid 1px $btn;
-    z-index: -1;
-    position: absolute;
-    display: block;
-    left: 10px;
-    top: 10px;
-
-  }
-}
-
-.button--color {
-  background-color: $primary;
-  width: 250px;
-  height: 51px;
-  color: $text;
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 500;
-  padding-top: 15px;
-  margin-left: 80px;
-
-
-  &:after {
-    display: none;
-  }
-}
-
-.button--info {
-  margin-left: 0;
-}
-
-
-.button--reviews {
-  border: solid 1px $text;
+.btn {
   width: 250px;
   height: 50px;
   color: $text;
   font-size: 20px;
-  line-height: 24px;
+  line-height: 2.21em;
   font-weight: 500;
-  background-color: $primary;
-  margin-left: 550px;
+  text-align: center;
+  display: inline-block;
+}
+
+.btn-red {
+  background-color: $red;
+  color: $white;
+  margin-top: 50px;
+}
+
+.btn-big {
+  width: 300px;
+  height: 60px;
+  font-size: 24px;
+  line-height: 2.21em;
+  font-weight: 600;
 
 }
 
-.button__text {
-  width: 250px;
-  height: 51px;
-  color: $white;
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 500;
-  margin: 0;
+.btn-yellow {
+  background-color: $primary;
+}
 
-  &:after {
-    content: " ";
-    width: 250px;
-    height: 50px;
+.btn-small {
+  width: 200px;
+  height: 50px;
+}
+
+.btn-border-grey {
+  border: solid 1px $border;
+}
+
+.btn-border-black {
+  border: solid 1px black;
+  margin-top: 40px;
+}
+
+
+.btn-footer {
+  margin-right: 0;
+  margin-top: 0;
+}
+.btn-after {
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
     border: solid 1px $primary;
-    z-index: -1;
     position: absolute;
     display: block;
     left: 10px;
     top: 10px;
+    z-index: 0;
+  }
 
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+  }
+  span {
+    position: relative;
+    z-index: 1;
   }
 }
 
-.button--footer {
-  width: 250px;
-  height: 45px;
-  margin: 0 10px 20px 35px;
-  line-height: 15px;
+.btn-after-grey {
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: solid 1px $btn;
+    position: absolute;
+    display: block;
+    left: 10px;
+    top: 10px;
+    z-index: 0;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
 }
+
+
+
 
 
 

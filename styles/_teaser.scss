@@ -1,9 +1,14 @@
-.form {
+.teaser {
   border: solid 1px $border;
   width: 33.333%;
-  height: 580px;
-  padding-top: 90px;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 50px;
   margin-right: 20px;
+
+  .teaser:last-child {
+    margin-right: 0;
+  }
 
   &__title {
     font-size: 24px;
@@ -11,16 +16,16 @@
     color: $text;
     font-weight: 600;
     text-align: center;
-    padding-bottom: 20px;
+
   }
 
-  &__product {
+  &__text {
     font-size: 16px;
     line-height: 21px;
     color: $text;
     font-weight: 400;
     text-align: center;
-    padding-top: 30px;
+    margin-top: 30px;
   }
 
   &__price {
@@ -29,11 +34,12 @@
     color: $text;
     font-weight: 600;
     text-align: center;
-    padding-top: 60px;
+    margin-top: 60px;
+    margin-bottom: 50px;
   }
 }
 
-.form:hover {
+.teaser:hover {
   border: solid 1px $primary;
 }
 
