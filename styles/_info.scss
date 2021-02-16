@@ -1,5 +1,6 @@
 .info {
   position: relative;
+  padding: 0 60px;
 }
 
 
@@ -18,7 +19,7 @@
 }
 
 
-.info__slider {
+.info__slide {
   margin-top: 90px;
   margin-left: 120px;
 }
@@ -33,6 +34,137 @@
 
 .info__img {
   position: absolute;
-  left: 528px;
-  top: 90px;
+  right: 0;
+  top: 20px;
+
+}
+
+.slide {
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease-in-out;
+
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.slide-arrow {
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  border: none;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+
+.slide-arrow:before{
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: 50%;
+  left: 50%;
+  border-left: 5px solid #000;
+  border-bottom: 5px solid #000;
+}
+.slide-arrow:before {
+  transform-origin: 100% 0;
+  transform: rotate(45deg);
+}
+
+.slide-arrow_left {
+  left: 0;
+}
+.slide-arrow_right {
+  position: absolute;
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.slider2{
+  height: 500px;
+  position: relative;
+}
+
+
+.slide2 {
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+
+  &.active {
+    visibility: visible;
+  }
+}
+
+.to-left {
+  animation: to-left 1s ease-in-out;
+  visibility: visible;
+  animation-fill-mode: both;
+}
+
+@keyframes to-left {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+.from-right {
+  animation: from-right 1s ease-in-out;
+  visibility: visible;
+  animation-fill-mode: both;
+}
+
+@keyframes from-right {
+  from {
+    transform: translateX(300px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.to-right {
+  animation: to-right 1s ease-in-out;
+  visibility: visible;
+}
+
+@keyframes to-right {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+
+.from-left {
+  animation: from-left 1s ease-in-out;
+  visibility: visible;
+}
+
+@keyframes from-left {
+  from {
+    transform: translateX(-300px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

@@ -31,9 +31,16 @@
         <div class="intro__inner">
             <div class="intro__title">Квартирные переезды</div>
             <div class="intro__text">По Москве и области</div>
-            <div class="btn btn-red btn-big btn-after-grey">
+            <div class="btn btn-red btn-big btn-after-grey modal-btn">
                 <span>Заказать</span>
             </div>
+            <div class="modal">
+                <svg class="modal__cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                </svg>
+                <p class="modal__title">Заказ оформлен</p>
+            </div>
+            <div class="modal__overlay"></div>
             <div class="intro__items">
                 <div class="intro__block">
                     <img class="intro__img" src="img/intro/1.png" alt="">
@@ -136,30 +143,127 @@
         </div>
     </div>
 </div>
-<div class="section">
+<div class="section" style="display: none;">
     <div class="container">
         <div class="section__title">Автопарк</div>
         <div class="section__subtitle">10 видов автомобилей от 800 кг до 10 тонн</div>
         <div class="section__body">
             <div class="info">
                 <div class="info__btn">
+                    <div class="btn btn-small btn-border-grey slide-btn" data-id="0">Газели</div>
+                    <div class="btn btn-small btn-border-grey slide-btn" data-id="1">Каблуки</div>
+                    <div class="btn btn-small btn-border-grey slide-btn" data-id="2">Грузовики</div>
+                </div>
+                <div class="slide active">
+                    <div class="info__slide">
+                        <div class="info__title">Газель 3 метра</div>
+                        <div class="listing">
+                            <ul>
+                                <li class="listing__info">Ширина 2 м</li>
+                                <li class="listing__info">Высота 2 м</li>
+                                <li class="listing__info">Объем 16 м³</li>
+                                <li class="listing__info">Грузоподъемность 1,5 т</li>
+                            </ul>
+                        </div>
+                        <div class="btn btn-yellow">Заказать</div>
+                    </div>
+                    <img class="info__img" src="img/info/1.png" alt="">
+                </div>
+                <div class="slide ">
+                    <div class="info__slide">
+                        <div class="info__title">Каблук 2 метра</div>
+                        <div class="listing">
+                            <ul>
+                                <li class="listing__info">Ширина 2 м</li>
+                                <li class="listing__info">Высота 2 м</li>
+                                <li class="listing__info">Объем 16 м³</li>
+                                <li class="listing__info">Грузоподъемность 1,5 т</li>
+                            </ul>
+                        </div>
+                        <div class="btn btn-yellow">Заказать</div>
+                    </div>
+                    <img class="info__img" src="img/info/4.png" style="width: 500px" alt="">
+                </div>
+                <div class="slide">
+                    <div class="info__slide">
+                        <div class="info__title">Грузовки</div>
+                        <div class="listing">
+                            <ul>
+                                <li class="listing__info">Ширина 2 м</li>
+                                <li class="listing__info">Высота 2 м</li>
+                                <li class="listing__info">Объем 16 м³</li>
+                                <li class="listing__info">Грузоподъемность 1,5 т</li>
+                            </ul>
+                        </div>
+                        <div class="btn btn-yellow">Заказать</div>
+                    </div>
+                    <img class="info__img" src="img/info/1.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="section__title">Автопарк</div>
+        <div class="section__subtitle">10 видов автомобилей от 800 кг до 10 тонн</div>
+        <div class="section__body">
+            <div class="info">
+                <button class="slide-arrow slide-arrow_left"></button>
+                <button class="slide-arrow slide-arrow_right"></button>
+                <div class="info__btn">
                     <div class="btn btn-small btn-border-grey">Газели</div>
                     <div class="btn btn-small btn-border-grey">Каблуки</div>
                     <div class="btn btn-small btn-border-grey">Грузовики</div>
                 </div>
-                <div class="info__slider">
-                    <div class="info__title">Газель 3 метра</div>
-                    <div class="listing">
-                        <ul>
-                            <li class="listing__info">Ширина 2 м</li>
-                            <li class="listing__info">Высота 2 м</li>
-                            <li class="listing__info">Объем 16 м³</li>
-                            <li class="listing__info">Грузоподъемность 1,5 т</li>
-                        </ul>
+                <div class="slider2">
+                    <div class="slide2 active" data-id="1">
+                        <div class="info__slide">
+                            <div class="info__title">Газель 3 метра</div>
+                            <div class="listing">
+                                <ul>
+                                    <li class="listing__info">Ширина 2 м</li>
+                                    <li class="listing__info">Высота 2 м</li>
+                                    <li class="listing__info">Объем 16 м³</li>
+                                    <li class="listing__info">Грузоподъемность 1,5 т</li>
+                                </ul>
+                            </div>
+                            <div class="btn btn-yellow">Заказать</div>
+                        </div>
+                        <img class="info__img" src="img/info/1.png" alt="">
                     </div>
-                    <div class="btn btn-yellow">Заказать</div>
+                    <div class="slide2" data-id="2">
+                        <div class="info__slide">
+                            <div class="info__title">Каблук 2 метра</div>
+                            <div class="listing">
+                                <ul>
+                                    <li class="listing__info">Ширина 2 м</li>
+                                    <li class="listing__info">Высота 2 м</li>
+                                    <li class="listing__info">Объем 16 м³</li>
+                                    <li class="listing__info">Грузоподъемность 1,5 т</li>
+                                </ul>
+                            </div>
+                            <div class="btn btn-yellow">Заказать</div>
+                        </div>
+                        <img class="info__img" src="img/info/4.png" style="width: 500px" alt="">
+                    </div>
+                    <div class="slide2" data-id="3">
+                        <div class="info__slide">
+                            <div class="info__title">Грузовки</div>
+                            <div class="listing">
+                                <ul>
+                                    <li class="listing__info">Ширина 2 м</li>
+                                    <li class="listing__info">Высота 2 м</li>
+                                    <li class="listing__info">Объем 16 м³</li>
+                                    <li class="listing__info">Грузоподъемность 1,5 т</li>
+                                </ul>
+                            </div>
+                            <div class="btn btn-yellow">Заказать</div>
+                        </div>
+                        <img class="info__img" src="img/info/1.png" alt="">
+                    </div>
                 </div>
-                <img class="info__img" src="img/info/1.png" alt="">
+
             </div>
         </div>
     </div>
@@ -324,5 +428,6 @@
         </div>
     </div>
 </footer>
+<script src="main.js"></script>
 </body>
 </html>

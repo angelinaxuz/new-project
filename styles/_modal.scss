@@ -1,0 +1,48 @@
+.modal {
+  width: 500px;
+  height: 200px;
+  background-color: $white;
+  top: 60px;
+  left: 700px;
+  position: fixed;
+  display: none;
+  z-index: 30;
+
+  &.active {
+    display: block;
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 5.21em;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &__cross {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+
+  }
+
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 20;
+  transition: .3s all;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
