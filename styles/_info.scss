@@ -140,6 +140,7 @@
 .to-right {
   animation: to-right 1s ease-in-out;
   visibility: visible;
+  animation-fill-mode: both;
 }
 
 @keyframes to-right {
@@ -148,7 +149,7 @@
     opacity: 1;
   }
   to {
-    transform: translateX(1000px);
+    transform: translateX(400px);
     opacity: 0;
   }
 }
@@ -156,6 +157,7 @@
 .from-left {
   animation: from-left 1s ease-in-out;
   visibility: visible;
+  animation-fill-mode: both;
 }
 
 @keyframes from-left {
