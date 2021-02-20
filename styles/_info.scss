@@ -14,7 +14,7 @@
 }
 
 
-.btn:hover {
+.btn:hover,.btn.active {
   border: solid 1px $primary;
 }
 

@@ -303,7 +303,7 @@ body {
   .info__btn .btn {
     margin-right: 20px; }
 
-.btn:hover {
+.btn:hover, .btn.active {
   border: solid 1px #FED100; }
 
 .info__slide {
