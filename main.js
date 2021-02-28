@@ -66,8 +66,11 @@ buttonRight.addEventListener("click", () => {
 
 let btns = document.querySelectorAll(".slide-btn")
 
+
 for (let i = 0; i < btns.length; i++) {
+
     btns[i].addEventListener("click", () => {
+
         let nextSlideId = btns[i].getAttribute("data-id")
         for (let x = 0; x < btns.length; x++) {
             btns[x].classList.remove("active")
