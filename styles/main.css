@@ -293,43 +293,38 @@ body {
 .teaser:hover {
   border: solid 1px #FED100; }
 
-.info {
+.slider {
+  height: 600px;
+  position: relative;
+  overflow: hidden; }
+
+.slider__inner {
+  width: 1600px;
+  height: 600px;
+  display: flex;
+  position: relative;
+  transition: transform 0.3s; }
+
+.slide {
+  width: 1300px;
+  flex-shrink: 0;
   position: relative;
   padding: 0 60px; }
 
-.info__btn {
-  display: flex;
-  justify-content: center; }
-  .info__btn .btn {
-    margin-right: 20px; }
-
-.btn:hover, .btn.active {
-  border: solid 1px #FED100; }
-
-.info__slide {
+.slide__inner {
   margin-top: 90px;
   margin-left: 120px; }
 
-.info__title {
+.slide__title {
   font-size: 24px;
   line-height: 29px;
   font-weight: 600;
   margin-bottom: 30px; }
 
-.info__img {
+.slide__img {
   position: absolute;
   right: 0;
   top: 20px; }
-
-.slide {
-  visibility: hidden;
-  position: absolute;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease-in-out; }
-  .slide.active {
-    visibility: visible;
-    opacity: 1; }
 
 .slide-arrow {
   width: 45px;
@@ -362,76 +357,17 @@ body {
   right: 0;
   transform: rotate(180deg); }
 
-.slider2 {
-  height: 500px;
-  position: relative; }
-
-.slide2 {
-  visibility: hidden;
-  position: absolute;
-  width: 100%; }
-  .slide2.active {
-    visibility: visible; }
-
-.to-left {
-  animation: to-left 1s ease-in-out;
-  visibility: visible;
-  animation-fill-mode: both; }
-
-@keyframes to-left {
-  from {
-    transform: translateX(0);
-    opacity: 1; }
-  to {
-    transform: translateX(-1000px);
-    opacity: 0; } }
-.from-right {
-  animation: from-right 1s ease-in-out;
-  visibility: visible;
-  animation-fill-mode: both; }
-
-@keyframes from-right {
-  from {
-    transform: translateX(300px);
-    opacity: 0; }
-  to {
-    transform: translateX(0);
-    opacity: 1; } }
-.to-right {
-  animation: to-right 1s ease-in-out;
-  visibility: visible;
-  animation-fill-mode: both; }
-
-@keyframes to-right {
-  from {
-    transform: translateX(0);
-    opacity: 1; }
-  to {
-    transform: translateX(400px);
-    opacity: 0; } }
-.from-left {
-  animation: from-left 1s ease-in-out;
-  visibility: visible;
-  animation-fill-mode: both; }
-
-@keyframes from-left {
-  from {
-    transform: translateX(-300px);
-    opacity: 0; }
-  to {
-    transform: translateX(0);
-    opacity: 1; } }
 .listing {
   margin-bottom: 30px; }
 
-.listing__info {
+.listing__inner {
   list-style-type: none;
   font-size: 16px;
   line-height: 21px;
   font-weight: 400;
   padding-bottom: 20px; }
 
-.listing__info:before {
+.listing__inner:before {
   content: " ";
   display: inline-block;
   width: 14px;

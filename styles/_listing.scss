@@ -3,7 +3,7 @@
 }
 
 
-.listing__info {
+.listing__inner {
   list-style-type: none;
   font-size: 16px;
   line-height: 21px;
@@ -11,7 +11,7 @@
   padding-bottom: 20px;
 }
 
-.listing__info:before {
+.listing__inner:before {
   content: " ";
   display: inline-block;
   width: 14px;
