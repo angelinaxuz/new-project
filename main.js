@@ -14,21 +14,79 @@ closeButton.addEventListener("click", () => {
 })
 
 
+// let buttonLeft = document.querySelector(".slide-arrow_left")
+// let buttonRight = document.querySelector(".slide-arrow_right")
+//
+// let slides = document.querySelectorAll('.slide')
+//
+// function getSlideWidth(slideIndex) { //получили ширину слайда
+//     let slide = document.querySelector(`.slide[data-id="${slideIndex}"`)
+//     return slide.offsetWidth
+// }
+//
+//
+// function getWrapperMoveSize(index) {
+//     let x = 0
+//     for (let i = 0; i <= slides.length; i++) {
+//         let w = getSlideWidth(i)
+//         if (i < index) {
+//             x -= w
+//         } else {
+//             break
+//         }
+//     }
+//     return x
+// }
+//
+// function moveWrapper(x) {
+//     let slideWrapper = document.querySelector(".slider__inner")
+//     slideWrapper.style.transform = `translateX(${x}px)`
+// }
+//
+//
+// let currentIndex = 0
+//
+// buttonLeft.addEventListener('click', () => {
+//     if (currentIndex >= slides.length - 1) {
+//         currentIndex = 0
+//     } else
+//         currentIndex = currentIndex + 1
+//     let x = getWrapperMoveSize(currentIndex)
+//     moveWrapper(x)
+//
+// })
+//
+//
+// buttonRight.addEventListener('click', () => {
+//     if (currentIndex === 0) {
+//         currentIndex = slides.length - 1
+//     } else
+//         currentIndex = currentIndex - 1
+//     let x = getWrapperMoveSize(currentIndex)
+//     moveWrapper(x)
+// })
+
 let buttonLeft = document.querySelector(".slide-arrow_left")
 let buttonRight = document.querySelector(".slide-arrow_right")
 
+let slides = document.querySelectorAll('.slide')
 
-function getMoveValue(index,w){
-    return (0-index)*w
+function getSlideWidth(slideIndex) { //получили ширину слайда
+    let slide = document.querySelector(`.slide[data-id="${slideIndex}"`)
+    return slide.offsetWidth
 }
 
-function getNextSlideIndex(slideIndex) {
-    return slideIndex + 1
-}
-
-function getSlideWidth (slideIndex) {
-    let slide = document.querySelector(`.slide:nth-child(${slideIndex+1})`)
-    return slide.clientWidth
+function getWrapperMoveSize(index) {
+    let x = 0
+    for (let i = 0; i <= slides.length; i++) {
+        let w = getSlideWidth(i)
+        if (i < index) {
+            x -= w
+        } else {
+            break
+        }
+    }
+    return x
 }
 
 function moveWrapper(x) {
@@ -36,36 +94,38 @@ function moveWrapper(x) {
     slideWrapper.style.transform = `translateX(${x}px)`
 }
 
-let currentSlideIndex = 1
-buttonLeft.addEventListener("click", () => {
-    let w = getSlideWidth(currentSlideIndex)
-    let x = getMoveValue(currentSlideIndex, w)
-    moveWrapper(x)
-    currentSlideIndex = getNextSlideIndex(currentSlideIndex)
+
+let currentIndex = 0
+
+buttonLeft.addEventListener('click', function () {
+    if (currentIndex >= 2) {
+        this.style.backgroundColor = 'yellow'
+    } else {
+        currentIndex = currentIndex + 1
+        let x = getWrapperMoveSize(currentIndex)
+        moveWrapper(x)
+    }
+
+     if (currentIndex < 2) {
+        buttonRight.style.backgroundColor = 'transparent'
+    }
 })
 
 
-function getMoveReverseValue(index,w){
-    return (0+index)*w
-}
-getMoveReverseValue(2)
-debugger
+buttonRight.addEventListener('click', function () {
+    if (currentIndex === 0) {
+        this.style.backgroundColor = 'yellow'
+    } else {
+        currentIndex = currentIndex - 1
+        let x = getWrapperMoveSize(currentIndex)
+        moveWrapper(x)
+    }
 
-function getPrevSlideIndex(slideIndex){
-    return slideIndex - 1
-}
-getPrevSlideIndex(2)
-debugger
-function moveWrapperRight(y) {
-    let slideWrapper = document.querySelector(".slider__inner")
-    slideWrapper.style.transform = `translateX(${x}px)`
-}
+    if (currentIndex < 2) {
+        buttonLeft.style.backgroundColor = 'transparent'
+    }
 
-buttonRight.addEventListener("click", ()=> {
-    let w = getSlideWidth(currentSlideIndex)
-    let y = getMoveReverseValue(currentSlideIndex, w)
-    moveWrapperRight(y)
-    currentSlideIndex = getPrevSlideIndex(currentSlideIndex)
+
+
 })
-
 
