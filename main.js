@@ -66,6 +66,16 @@ closeButton.addEventListener("click", () => {
 //     moveWrapper(x)
 // })
 
+
+function addDataId() {
+    let slides = document.querySelectorAll(".slide")
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].setAttribute('data-id', i)
+    }
+}
+
+addDataId()
+
 let buttonLeft = document.querySelector(".slide-arrow_left")
 let buttonRight = document.querySelector(".slide-arrow_right")
 
@@ -106,7 +116,7 @@ buttonLeft.addEventListener('click', function () {
         moveWrapper(x)
     }
 
-     if (currentIndex < 2) {
+    if (currentIndex < 2) {
         buttonRight.style.backgroundColor = 'transparent'
     }
 })
@@ -125,7 +135,8 @@ buttonRight.addEventListener('click', function () {
         buttonLeft.style.backgroundColor = 'transparent'
     }
 
-
-
 })
+
+
+
 
