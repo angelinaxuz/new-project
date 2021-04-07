@@ -66,6 +66,49 @@ closeButton.addEventListener("click", () => {
 //     moveWrapper(x)
 // })
 
+let slider1 = document.querySelector("#slider1")
+console.log(slider1)
+
+
+let slider = document.createElement('div')
+slider.classList.add("slider")
+
+slider1.prepend(slider)
+
+console.log(slider)
+
+let slideArrowLeft = document.createElement('button')
+slideArrowLeft.classList.add("slide-arrow", "slide-arrow_left")
+
+slider.prepend(slideArrowLeft)
+console.log(slideArrowLeft)
+
+
+let slideArrowRight = document.createElement('button')
+slideArrowRight.classList.add("slide-arrow", "slide-arrow_right")
+
+slider.append(slideArrowRight)
+console.log(slideArrowRight)
+
+
+
+let sliderInner = document.createElement('div')
+sliderInner.classList.add("slider__inner")
+
+slider.append(sliderInner)
+
+console.log(sliderInner)
+
+
+let slideList = document.querySelector(".slide-list")
+
+
+while (slideList.childNodes.length > 0) {
+    sliderInner.appendChild(slideList.childNodes[0]);
+}
+
+console.log(sliderInner)
+
 
 function addDataId() {
     let slides = document.querySelectorAll(".slide")
@@ -136,6 +179,9 @@ buttonRight.addEventListener('click', function () {
     }
 
 })
+
+
+
 
 
 
