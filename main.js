@@ -76,110 +76,212 @@ closeButton.addEventListener("click", () => {
 // 4. Функция, которая осуществляет работу слайдера
 
 
-function createSlider() {
-    let slider1 = document.querySelector("#slider1")
-    let slider = document.createElement('div')
-    slider.classList.add("slider")
-    let sliderInner = document.createElement('div')
-    sliderInner.classList.add("slider__inner")
-    slider1.prepend(slider)
-    slider.append(sliderInner)
-    addSlide()
-    addButtons()
-    addDataId()
-    flippingSlides()
+class Slider {
+    constructor(containerId, items) {
+        this.container = document.querySelector(`#${containerId}`)
+        this.items = items
+        this.currentIndex = 0
+        this.buildWrapper()
+        this.addSlide()
+        this.addButtons()
+        this.addDataId()
 
-}
-
-function addSlide() {
-    let elements = document.querySelectorAll(".aaa")
-    let sliderInner = document.querySelector(".slider__inner")
-    for (let i = 0; i < elements.length; i++) {
-        let slide = document.createElement('div')
-        slide.classList.add("slide")
-        sliderInner.appendChild(slide)
-        slide.appendChild(elements[i])
-
-    }
-}
-
-function addButtons() {
-    let slider = document.querySelector(".slider")
-    let slideArrowLeft = document.createElement('button')
-    slideArrowLeft.classList.add("slide-arrow", "slide-arrow_left")
-    slider.prepend(slideArrowLeft)
-    let slideArrowRight = document.createElement('button')
-    slideArrowRight.classList.add("slide-arrow", "slide-arrow_right")
-    slider.prepend(slideArrowRight)
-}
-
-function addDataId() {
-    let slides = document.querySelectorAll(".slide")
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].setAttribute('data-id', i)
-    }
-}
-
-function flippingSlides() {
-    let buttonLeft = document.querySelector(".slide-arrow_left")
-    let buttonRight = document.querySelector(".slide-arrow_right")
-    let slides = document.querySelectorAll('.slide')
-    let currentIndex = 0
-
-    function getSlideWidth(slideIndex) { //получили ширину слайда
-        let slide = document.querySelector(`.slide[data-id="${slideIndex}"`)
-        return slide.offsetWidth
+        this.slideArrowLeft.addEventListener('click', this.toLeft)
+        this.slideArrowRight.addEventListener('click', this.toRight)
     }
 
-    function getWrapperMoveSize(index) {
+    buildWrapper() {
+        this.slider = document.createElement('div')
+        this.slider.classList.add("slider")
+        this.container.prepend(this.slider)
+
+        this.inner = document.createElement('div')
+        this.inner.classList.add("slider__inner")
+        this.slider.prepend(this.inner)
+    }
+
+    addSlide() {
+
+        this.slides = []
+        for (let i = 0; i < this.items.length; i++) {
+            let slide = document.createElement('div')
+            slide.classList.add("slide")
+            this.inner.appendChild(slide)
+            slide.appendChild(this.items[i])
+            this.slides.push(slide)
+        }
+    }
+
+    addButtons() {
+        this.slideArrowLeft = document.createElement('button')
+        this.slideArrowLeft.classList.add("slide-arrow", "slide-arrow_left")
+        this.slider.prepend(this.slideArrowLeft)
+
+        this.slideArrowRight = document.createElement('button')
+        this.slideArrowRight.classList.add("slide-arrow", "slide-arrow_right")
+        this.slider.prepend(this.slideArrowRight)
+    }
+
+    addDataId() {
+        for (let i = 0; i  < this.slides.length; i++) {
+            this.slides[i].setAttribute('data-id', i)
+        }
+    }
+
+    getSlideWidth(slideIndex) {
+        return this.slides[slideIndex].offsetWidth
+    }
+
+    moveWrapper() {
         let x = 0
-        for (let i = 0; i <= slides.length; i++) {
-            let w = getSlideWidth(i)
-            if (i < index) {
+        for (let i = 0; i <= this.slides.length; i++) {
+            let w = this.getSlideWidth(i)
+            if (i < this.currentIndex) {
                 x -= w
             } else {
                 break
             }
         }
-        return x
+        this.inner.style.transform = `translateX(${x}px)`
     }
 
-    function moveWrapper(x) {
-        let slideWrapper = document.querySelector(".slider__inner")
-        slideWrapper.style.transform = `translateX(${x}px)`
+    toLeft = () => {
+        if (this.currentIndex >= 2) {
+            this.slideArrowLeft.style.backgroundColor = 'yellow'
+        } else {
+            this.currentIndex = this.currentIndex + 1
+            this.moveWrapper()
+        }
+
+        if (this.currentIndex < 2) {
+            this.slideArrowRight.style.backgroundColor = 'transparent'
+        }
     }
 
-
-    buttonLeft.addEventListener('click', function () {
-        if (currentIndex >= 2) {
-            this.style.backgroundColor = 'yellow'
+    toRight = () => {
+        if (this.currentIndex === 0) {
+            this.slideArrowRight.style.backgroundColor = 'yellow'
         } else {
-            currentIndex = currentIndex + 1
-            let x = getWrapperMoveSize(currentIndex)
-            moveWrapper(x)
+            this.currentIndex = this.currentIndex - 1
+            this.moveWrapper()
         }
 
-        if (currentIndex < 2) {
-            buttonRight.style.backgroundColor = 'transparent'
+        if (this.currentIndex < 2) {
+            this.slideArrowLeft.style.backgroundColor = 'transparent'
         }
-    })
-    buttonRight.addEventListener('click', function () {
-        if (currentIndex === 0) {
-            this.style.backgroundColor = 'yellow'
-        } else {
-            currentIndex = currentIndex - 1
-            let x = getWrapperMoveSize(currentIndex)
-            moveWrapper(x)
-        }
-
-        if (currentIndex < 2) {
-            buttonLeft.style.backgroundColor = 'transparent'
-        }
-
-    })
+    }
 }
 
-createSlider()
+new Slider('slider1', document.querySelectorAll(".aaa"))
+
+
+//
+// function createSlider() {
+//     let slider1 = document.querySelector("#slider1")
+//     let slider = document.createElement('div')
+//     slider.classList.add("slider")
+//     let sliderInner = document.createElement('div')
+//     sliderInner.classList.add("slider__inner")
+//     slider1.prepend(slider)
+//     slider.append(sliderInner)
+//     addSlide()
+//     addButtons()
+//     addDataId()
+//     flippingSlides()
+//
+// }
+
+// function addSlide() {
+//     let elements = document.querySelectorAll(".aaa")
+//     let sliderInner = document.querySelector(".slider__inner")
+//     for (let i = 0; i < elements.length; i++) {
+//         let slide = document.createElement('div')
+//         slide.classList.add("slide")
+//         sliderInner.appendChild(slide)
+//         slide.appendChild(elements[i])
+//
+//     }
+// }
+//
+// function addButtons() {
+//     let slider = document.querySelector(".slider")
+//     let slideArrowLeft = document.createElement('button')
+//     slideArrowLeft.classList.add("slide-arrow", "slide-arrow_left")
+//     slider.prepend(slideArrowLeft)
+//     let slideArrowRight = document.createElement('button')
+//     slideArrowRight.classList.add("slide-arrow", "slide-arrow_right")
+//     slider.prepend(slideArrowRight)
+// }
+//
+// function addDataId() {
+//     let slides = document.querySelectorAll(".slide")
+//     for (let i = 0; i < slides.length; i++) {
+//         slides[i].setAttribute('data-id', i)
+//     }
+// }
+//
+// function flippingSlides() {
+//     let buttonLeft = document.querySelector(".slide-arrow_left")
+//     let buttonRight = document.querySelector(".slide-arrow_right")
+//     let slides = document.querySelectorAll('.slide')
+//     let currentIndex = 0
+//
+//     function getSlideWidth(slideIndex) { //получили ширину слайда
+//         let slide = document.querySelector(`.slide[data-id="${slideIndex}"`)
+//         return slide.offsetWidth
+//     }
+//
+//     function getWrapperMoveSize(index) {
+//         let x = 0
+//         for (let i = 0; i <= slides.length; i++) {
+//             let w = getSlideWidth(i)
+//             if (i < index) {
+//                 x -= w
+//             } else {
+//                 break
+//             }
+//         }
+//         return x
+//     }
+//
+//     function moveWrapper(x) {
+//         let slideWrapper = document.querySelector(".slider__inner")
+//         slideWrapper.style.transform = `translateX(${x}px)`
+//     }
+//
+//
+//     buttonLeft.addEventListener('click', function () {
+//         if (currentIndex >= 2) {
+//             this.style.backgroundColor = 'yellow'
+//         } else {
+//             currentIndex = currentIndex + 1
+//             let x = getWrapperMoveSize(currentIndex)
+//             moveWrapper(x)
+//         }
+//
+//         if (currentIndex < 2) {
+//             buttonRight.style.backgroundColor = 'transparent'
+//         }
+//     })
+//     buttonRight.addEventListener('click', function () {
+//         if (currentIndex === 0) {
+//             this.style.backgroundColor = 'yellow'
+//         } else {
+//             currentIndex = currentIndex - 1
+//             let x = getWrapperMoveSize(currentIndex)
+//             moveWrapper(x)
+//         }
+//
+//         if (currentIndex < 2) {
+//             buttonLeft.style.backgroundColor = 'transparent'
+//         }
+//
+//     })
+// }
+//
+// createSlider()
+
+
 // let slideList = document.querySelector(".slide-list")
 // while (slideList.childNodes.length > 0) {
 //     sliderInner.appendChild(slideList.childNodes[0]);
