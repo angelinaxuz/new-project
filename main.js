@@ -76,6 +76,25 @@ closeButton.addEventListener("click", () => {
 // 4. Функция, которая осуществляет работу слайдера
 
 
+//слайдер по кругу переключался
+
+//Слайдер карусель
+
+//создать общий вид слайдера
+//добавить клоны к основным слайдам
+//добавить кнопки
+//добавить нужный id
+//перелистывание слайдов нажимая на кнопку
+//отключение и включение анимации -> возврат к первому слайду
+//
+//
+// class Carousel {
+//     constructor() {
+//         this.container = document.querySelector('')
+//     }
+// }
+
+
 class Slider {
     constructor(containerId, items) {
         this.container = document.querySelector(`#${containerId}`)
@@ -84,7 +103,8 @@ class Slider {
         this.buildWrapper()
         this.addSlide()
         this.addButtons()
-        this.addDataId()
+        this.addSlideClone()
+        this.moveWrapper()
 
         this.slideArrowLeft.addEventListener('click', this.toLeft)
         this.slideArrowRight.addEventListener('click', this.toRight)
@@ -122,11 +142,16 @@ class Slider {
         this.slider.prepend(this.slideArrowRight)
     }
 
-    addDataId() {
-        for (let i = 0; i  < this.slides.length; i++) {
-            this.slides[i].setAttribute('data-id', i)
-        }
+    addSlideClone() {
+        let lastSlideClone = this.slides[0].cloneNode(true)
+        this.inner.append(lastSlideClone)
+        this.slides.push(lastSlideClone)
+
+        let firstSlideClone = this.slides[2].cloneNode(true)
+        this.inner.prepend(firstSlideClone)
+        this.slides.unshift(firstSlideClone)
     }
+
 
     getSlideWidth(slideIndex) {
         return this.slides[slideIndex].offsetWidth
@@ -134,45 +159,153 @@ class Slider {
 
     moveWrapper() {
         let x = 0
-        for (let i = 0; i <= this.slides.length; i++) {
+        for (let i = 0; i < this.slides.length; i++) {
             let w = this.getSlideWidth(i)
-            if (i < this.currentIndex) {
+            if (i < this.currentIndex + 1) {
                 x -= w
             } else {
                 break
             }
         }
+        console.log(x)
         this.inner.style.transform = `translateX(${x}px)`
     }
-
     toLeft = () => {
-        if (this.currentIndex >= 2) {
-            this.slideArrowLeft.style.backgroundColor = 'yellow'
-        } else {
-            this.currentIndex = this.currentIndex + 1
-            this.moveWrapper()
-        }
-
-        if (this.currentIndex < 2) {
-            this.slideArrowRight.style.backgroundColor = 'transparent'
+        this.currentIndex += 1
+        this.moveWrapper()
+        if(this.currentIndex === this.items.length){
+            setTimeout(this.beginReplace, 350)
         }
     }
 
     toRight = () => {
-        if (this.currentIndex === 0) {
-            this.slideArrowRight.style.backgroundColor = 'yellow'
-        } else {
-            this.currentIndex = this.currentIndex - 1
-            this.moveWrapper()
+        this.currentIndex -= 1
+        this.moveWrapper()
+        if(this.currentIndex < 0 ){
+            setTimeout(this.endReplace, 350)
         }
+    }
+    beginReplace = () =>{
+        this.inner.style.transition = 'none'
+        this.currentIndex = 0
+        this.moveWrapper()
+        setTimeout(() => {
+            this.inner.style.transition = 'transform 0.3s'
+        }, 10)
 
-        if (this.currentIndex < 2) {
-            this.slideArrowLeft.style.backgroundColor = 'transparent'
-        }
+
+    }
+    endReplace = () => {
+        this.inner.style.transition = 'none'
+        this.currentIndex = this.items.length - 1
+        this.moveWrapper()
+        setTimeout(() => {
+            this.inner.style.transition = 'transform 0.3s'
+        }, 10)
     }
 }
 
+
 new Slider('slider1', document.querySelectorAll(".aaa"))
+
+
+// class Slider {
+//     constructor(containerId, items) {
+//         this.container = document.querySelector(`#${containerId}`)
+//         this.items = items
+//         this.currentIndex = 0
+//         this.buildWrapper()
+//         this.addSlide()
+//         this.addButtons()
+//         this.addDataId()
+//
+//         this.slideArrowLeft.addEventListener('click', this.toLeft)
+//         this.slideArrowRight.addEventListener('click', this.toRight)
+//     }
+//
+//     buildWrapper() {
+//         this.slider = document.createElement('div')
+//         this.slider.classList.add("slider")
+//         this.container.prepend(this.slider)
+//
+//         this.inner = document.createElement('div')
+//         this.inner.classList.add("slider__inner")
+//         this.slider.prepend(this.inner)
+//     }
+//
+//     addSlide() {
+//
+//         this.slides = []
+//         for (let i = 0; i < this.items.length; i++) {
+//             let slide = document.createElement('div')
+//             slide.classList.add("slide")
+//             this.inner.appendChild(slide)
+//             slide.appendChild(this.items[i])
+//             this.slides.push(slide)
+//         }
+//     }
+//
+//     addButtons() {
+//         this.slideArrowLeft = document.createElement('button')
+//         this.slideArrowLeft.classList.add("slide-arrow", "slide-arrow_left")
+//         this.slider.prepend(this.slideArrowLeft)
+//
+//         this.slideArrowRight = document.createElement('button')
+//         this.slideArrowRight.classList.add("slide-arrow", "slide-arrow_right")
+//         this.slider.prepend(this.slideArrowRight)
+//     }
+//
+//     addDataId() {
+//         for (let i = 0; i  < this.slides.length; i++) {
+//             this.slides[i].setAttribute('data-id', i)
+//         }
+//     }
+//
+//     getSlideWidth(slideIndex) {
+//         return this.slides[slideIndex].offsetWidth
+//     }
+//
+//     moveWrapper() {
+//         let x = 0
+//         for (let i = 0; i <= this.slides.length; i++) {
+//             let w = this.getSlideWidth(i)
+//             if (i < this.currentIndex) {
+//                 x -= w
+//             } else {
+//                 break
+//             }
+//         }
+//         this.inner.style.transform = `translateX(${x}px)`
+//     }
+//
+//     toLeft = () => {
+//         if (this.currentIndex >= 2) {
+//             this.slideArrowLeft.style.backgroundColor = 'yellow'
+//         } else {
+//             this.currentIndex = this.currentIndex + 1
+//             this.moveWrapper()
+//         }
+//
+//         if (this.currentIndex < 2) {
+//             this.slideArrowRight.style.backgroundColor = 'transparent'
+//         }
+//     }
+//
+//     toRight = () => {
+//         if (this.currentIndex === 0) {
+//             this.slideArrowRight.style.backgroundColor = 'yellow'
+//         } else {
+//             this.currentIndex = this.currentIndex - 1
+//             this.moveWrapper()
+//         }
+//
+//         if (this.currentIndex < 2) {
+//             this.slideArrowLeft.style.backgroundColor = 'transparent'
+//         }
+//     }
+// }
+//
+// new Slider('slider1', document.querySelectorAll(".aaa"))
 
 
 //
