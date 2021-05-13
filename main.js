@@ -207,6 +207,8 @@ class Slider {
 
 
 new Slider('slider1', document.querySelectorAll(".aaa"))
+$('.aaa')
+
 
 
 // class Slider {
