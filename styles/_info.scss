@@ -93,80 +93,80 @@
 }
 
 
-.slide2 {
-  visibility: hidden;
-  position: absolute;
-  width: 100%;
+//.slide2 {
+//  visibility: hidden;
+//  position: absolute;
+//  width: 100%;
+//
+//  &.active {
+//    visibility: visible;
+//  }
+//}
 
-  &.active {
-    visibility: visible;
-  }
-}
-
-.to-left {
-  animation: to-left 1s ease-in-out;
-  visibility: visible;
-  animation-fill-mode: both;
-}
-
-@keyframes to-left {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(-1000px);
-    opacity: 0;
-  }
-}
-
-.from-right {
-  animation: from-right 1s ease-in-out;
-  visibility: visible;
-  animation-fill-mode: both;
-}
-
-@keyframes from-right {
-  from {
-    transform: translateX(300px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.to-right {
-  animation: to-right 1s ease-in-out;
-  visibility: visible;
-  animation-fill-mode: both;
-}
-
-@keyframes to-right {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(400px);
-    opacity: 0;
-  }
-}
-
-.from-left {
-  animation: from-left 1s ease-in-out;
-  visibility: visible;
-  animation-fill-mode: both;
-}
-
-@keyframes from-left {
-  from {
-    transform: translateX(-300px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
+//.to-left {
+//  animation: to-left 1s ease-in-out;
+//  visibility: visible;
+//  animation-fill-mode: both;
+//}
+//
+//@keyframes to-left {
+//  from {
+//    transform: translateX(0);
+//    opacity: 1;
+//  }
+//  to {
+//    transform: translateX(-1000px);
+//    opacity: 0;
+//  }
+//}
+//
+//.from-right {
+//  animation: from-right 1s ease-in-out;
+//  visibility: visible;
+//  animation-fill-mode: both;
+//}
+//
+//@keyframes from-right {
+//  from {
+//    transform: translateX(300px);
+//    opacity: 0;
+//  }
+//  to {
+//    transform: translateX(0);
+//    opacity: 1;
+//  }
+//}
+//
+//.to-right {
+//  animation: to-right 1s ease-in-out;
+//  visibility: visible;
+//  animation-fill-mode: both;
+//}
+//
+//@keyframes to-right {
+//  from {
+//    transform: translateX(0);
+//    opacity: 1;
+//  }
+//  to {
+//    transform: translateX(400px);
+//    opacity: 0;
+//  }
+//}
+//
+//.from-left {
+//  animation: from-left 1s ease-in-out;
+//  visibility: visible;
+//  animation-fill-mode: both;
+//}
+//
+//@keyframes from-left {
+//  from {
+//    transform: translateX(-300px);
+//    opacity: 0;
+//  }
+//  to {
+//    transform: translateX(0);
+//    opacity: 1;
+//  }
+//}
