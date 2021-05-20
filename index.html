@@ -8,6 +8,7 @@
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="styles/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
@@ -18,16 +19,16 @@
         <div class="header__inner">
             <div class="logo">MOVEE</div>
             <div class="nav">
-                <a href="#">Цены</a>
-                <a href="#">Автопарк</a>
-                <a href="#">Отзывы</a>
-                <a href="#">Контакты</a>
+                <a href="#" data-scroll="#price">Цены</a>
+                <a href="#" data-scroll="#autopark">Автопарк</a>
+                <a href="#" data-scroll="#reviews">Отзывы</a>
+                <a href="#" data-scroll="#contacts">Контакты</a>
             </div>
             <div class="phone">8(800)-080-12-13</div>
         </div>
     </div>
 </header>
-<div class="intro">
+<div class="intro" id="intro">
     <div class="container">
         <div class="intro__inner">
             <div class="intro__title">Квартирные переезды</div>
@@ -110,7 +111,7 @@
         </div>
     </div>
 </div>
-<div class="section">
+<div class="section" id="price">
     <div class="container">
         <div class="section__title">Цены</div>
         <div class="section__subtitle">Фиксированная стоимость на переезд под ключ</div>
@@ -144,7 +145,7 @@
         </div>
     </div>
 </div>
-<div class="section">
+<div class="section" id="autopark">
     <div class="container">
         <div class="section__title">Автопарк</div>
         <div class="section__subtitle">10 видов автомобилей от 800 кг до 10 тонн</div>
@@ -153,11 +154,11 @@
                 <button class="slide-arrow slide-arrow_left"></button>
                 <button class="slide-arrow slide-arrow_right"></button>
                 <div class="info__btn">
-                    <div class="btn btn-small btn-border-grey slide-btn" data-id="1">Газели</div>
-                    <div class="btn btn-small btn-border-grey slide-btn" data-id="2">Каблуки</div>
-                    <div class="btn btn-small btn-border-grey slide-btn" data-id="3">Грузовики</div>
+                    <div class="btn btn-small btn-border-grey slide-btn" data-id="0">Газели</div>
+                    <div class="btn btn-small btn-border-grey slide-btn" data-id="1">Каблуки</div>
+                    <div class="btn btn-small btn-border-grey slide-btn" data-id="2">Грузовики</div>
                 </div>
-                <div class="slider2">
+                <div class="slider2" id="sliderSlick">
                     <div class="slide2" data-id="1">
                         <div class="info__slide">
                             <div class="info__title">Газель 3 метра</div>
@@ -205,11 +206,12 @@
                     </div>
                 </div>
 
+
             </div>
         </div>
     </div>
 </div>
-<div class="section section-yellow">
+<div class="section section-yellow" id="reviews">
     <div class="container">
         <div class="section__title">Отзывы</div>
         <div class="section__body">
@@ -284,7 +286,7 @@
     </div>
 </div>
 
-<div class="contactform">
+<div class="contactform" id="contacts">
     <div class="container">
         <form class="form" action="">
             <div class="form__title">Закажи переезд прямо сейчас</div>
@@ -369,6 +371,7 @@
         </div>
     </div>
 </footer>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="jquery.js"></script>
 </body>
 </html>

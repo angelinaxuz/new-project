@@ -14,14 +14,25 @@ body {
   padding-left: 15px; }
 
 .header {
+  width: 100%;
   height: 100px;
-  padding-top: 20px;
-  position: relative;
-  z-index: 1; }
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1000; }
   .header__inner {
     display: flex;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    padding: 35px 0; }
+
+.header.fixed {
+  height: auto;
+  position: fixed;
+  background-color: #FED100; }
+
+.header.fixed .header__inner {
+  padding: 15px 0; }
 
 .logo {
   font-size: 30px;
@@ -134,8 +145,8 @@ body {
 .intro {
   background-color: #FED100;
   margin-top: -100px;
-  height: 650px;
-  padding-top: 100px;
+  height: 750px;
+  padding-top: 200px;
   position: relative; }
   .intro__inner {
     max-width: 550px;
@@ -364,6 +375,9 @@ body {
 
 .slider2 {
   height: 500px;
+  position: relative; }
+
+.slide2 {
   position: relative; }
 
 .listing {
