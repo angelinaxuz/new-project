@@ -43,15 +43,20 @@ $(document).ready(function () {
 
     slider.slick('slickGoTo', 'data-id', true);
 
-    $('.slide-btn').on('click', function (){
+    $('.slide-btn').on('click', function () {
         let x = $(this).data('id')
         slider.slick('slickGoTo', x);
-    })
+    });
 
-    slider.on('beforeChange', function(event, slick, currentSlide){
+    slider.on('beforeChange', function (event, slick, currentSlide) {
         $('.slide-btn').removeClass('active')
         $(`.slide-btn[data-id="${currentSlide}"]`).addClass('active')
-    })
+    });
+
+    $('.btn.btn-red.btn-big.btn-after-grey').on('click', function () {
+        $.fancybox.open('<div class="message"><h2>Приветствуем!</h2><p>Ваш заказ принят!</p></div>');
+    });
+
 
 });
 
